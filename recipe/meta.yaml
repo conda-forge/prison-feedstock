@@ -1,5 +1,5 @@
 {% set name = "prison" %}
-{% set version = "0.1.0" %}
+{% set version = "0.1.2" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 source:
 
   url: https://github.com/betodealmeida/python-rison/archive/{{ version }}.tar.gz
-  sha256: eae55fe1d74652738c86e536228e276b8119d4eef69e629d71d3da8d746a0745
+  sha256: 5363380ac1d2026e8e6d05700020a6ff64cdb8491be98e1efe17fd8f7f9e9253
 
 build:
   noarch: python
