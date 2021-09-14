@@ -1,5 +1,5 @@
 {% set name = "prison" %}
-{% set version = "0.2.0" %}
+{% set version = "0.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/prison-{{ version }}.tar.gz
-  sha256: d369a482b79b69b949d5bad0c7370b8dce31b6c9e8b147798ba5630f27346f16
+  sha256: e6cd724044afcb1a8a69340cad2f1e3151a5839fd3a8027fd1357571e797c599
 
 build:
   number: 0
