@@ -6,52 +6,35 @@ package:
   version: {{ version }}
 
 source:
-
-  url: https://github.com/betodealmeida/python-rison/archive/{{ version }}.tar.gz
-  sha256: d39178c6903c0dcb40bff209e6ad6f9dbcb3f801749c22b32297c473493fc031
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/prison-{{ version }}.tar.gz
+  sha256: a02b55719d033c4e7efc1d1660ed884a73743d89effb48205c5743c3c658b799
 
 build:
+  number: 1
   noarch: python
-  number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python
+    - python >=3.3
     - pip
   run:
-    - python
-    - requests
+    - python >=3.3
     - six
 
 test:
   imports:
     - prison
-# These tests don't work with this version because they assume prison has not
-# been installed in the python environment
-#  source_files:
-#    - tests/*.py
-#  commands:
-#    - python tests/test_encoder.py
-#    - python tests/test_decoder.py
-
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/betodealmeida/python-rison
+  summary: Rison encoder/decoder
   license: MIT
-  license_family: MIT
   license_file: LICENSE
-  summary: Python rison encoder/decoder
-
-  # The remaining entries in this section are optional, but recommended
-  description: |
-    Rison is a data serialization format optimized for compactness in URIs.
-    Rison is a slight variation of JSON that looks vastly superior after URI
-    encoding. Rison still expresses exactly the same set of data structures as
-    JSON, so data can be translated back and forth without loss or guesswork.
-
-  doc_url: https://github.com/betodealmeida/python-rison
-  dev_url: https://github.com/betodealmeida/python-rison
 
 extra:
   recipe-maintainers:
